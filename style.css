@@ -1,18 +1,28 @@
 body {
-  /* display: flex; */
   margin: 10px;
   cursor:;
-  width: 100%
+  width: 100%;
+  background-image: url("https://img.freepik.com/free-photo/texture-background_1404-99.jpg?size=626&ext=jpg");
+}
+header {
+  background-color: blue;
+  text-align: center;
+}
+h1 {
+  font-size: 50px;
+  font-family: cursive;
+
 }
 .mouseCheese {
   position: absolute;
-  background-color: black;
-  transition: top 2s, left 2s;
+  background-image: url("images/cheeseMouse-down.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  transition: top 1s, left  1s;
   transition-timing-function: linear;
-  width: 30px;
-  height: 30px;
-  padding: 5px;
-  margin: 10px;
+  width: 130px;
+  height: 130px;
 }
 /* main {
   width: 400px;
@@ -22,11 +32,18 @@ body {
 } */
 .mouse{
   position: absolute;
-  background-color: red;
-  transition: top 2s, left 2s;
+  /* background-color: red; */
+  background-position: center;
+  /* background-attachment: fixed; */
+  transition: top 2s, left 1s;
   transition-timing-function: linear;
-  width: 30px;
-  height: 30px;
-  padding: 5px;
-  margin: 10px;
+  width: 130px;
+  height: 130px;
+  background-size: contain;
+  background-image: url("images/mouse-down.png");
+  background-repeat: no-repeat;
 }
+
+/* .mouse.down {
+  background-image: url(./images/mouse-down.png);
+} */
