@@ -24,17 +24,9 @@ h1 {
   width: 130px;
   height: 130px;
 }
-/* main {
-  width: 400px;
-  height: 400px;
-  border: black solid;
-  margin 0;
-} */
 .mouse{
   position: absolute;
-  /* background-color: red; */
   background-position: center;
-  /* background-attachment: fixed; */
   transition: top 2s, left 1s;
   transition-timing-function: linear;
   width: 130px;
@@ -44,6 +36,6 @@ h1 {
   background-repeat: no-repeat;
 }
 
-/* .mouse.down {
+/* .mouse.up {
   background-image: url(./images/mouse-down.png);
 } */
