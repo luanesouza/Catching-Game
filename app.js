@@ -85,7 +85,8 @@ let downloadTimer = setInterval(function(){
    timeLeft -= 1;
    if (timeLeft > 1) {
      checkScore();
-   } else if(timeLeft <= 0) {
+   } else if(timeLeft === 0) {
+     clearInterval(downloadTimer);
      checkScore();
    }
  }, 1000);
@@ -93,13 +94,13 @@ let downloadTimer = setInterval(function(){
  //************* SCORE *************
  scoreBoard.innerHTML = `Your score is ${score}`;
   const checkScore = () => {
-    if (score >= 40 || timeLeft < 1) {
+    if (score >= 40 && timeLeft > 1) {
       console.log('Anything');
       timerLeft = clearInterval(downloadTimer);
       timerBoard.innerHTML = `You win!`;
 
-    } else if (score < 40 || timeLeft === 0) {
-         timerBoard.innerHTML = `Your time is up! You scored only ${score} points.`;
+    } else if (score < 40 && timeLeft === 0) {
+         timerBoard.innerHTML = `Your time is up! You scored ${score} points.`;
       }
   }
 checkScore();
