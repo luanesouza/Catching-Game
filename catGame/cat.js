@@ -51,7 +51,7 @@ let mouseMove = setInterval(() => {
 };
 //************* create more mice class *************
 
-for (i = 0; i < 3; i++) {
+for (i = 0; i < 5; i++) {
   createMouse();
 }
 //************* move the mouse with the cheese(50 points) *************
@@ -93,11 +93,11 @@ let downloadTimer = setInterval(function(){
 
  scoreBoard.innerHTML = `Your score is ${score}`;
   const checkScore = () => {
-    if (score === 90 && timeLeft > 1) {
+    if (score === 110 && timeLeft > 1) {
       timerLeft = clearInterval(downloadTimer);
       timerBoard.innerHTML = `You win!`;
       // secondLevel();
-    } else if (score < 40 && timeLeft === 0) {
+    } else if (score < 110 && timeLeft === 0) {
          timerBoard.innerHTML = `Your time is up! You scored ${score} points.`;
       }
   }
