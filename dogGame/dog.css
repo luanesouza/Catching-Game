@@ -2,28 +2,29 @@ body {
   margin: 10px;
   cursor:;
   width: 100%;
-  /* background-repeat: no-repeat; */
 }
+
 header {
   background-color: blue;
   text-align: center;
 }
+
 /* *** div wrapped around the whole board *** */
 .whole-board {
   display: flex;
   text-align: center;
   justify-content: center;
   background-image: url("./dogGameImages/tiles.jpg");
-
 }
+
 h1 {
   font-size: 50px;
   font-family:'Amatic SC', cursive;
   padding: 10px;
   margin: 0;
   position: relative;
-
 }
+/* *** Squirrels with a nut is 50 points *** */
 .squirrelNut {
   position: absolute;
   background-image: url("dogGameImages/squirrel.png");
@@ -35,6 +36,7 @@ h1 {
   width: 130px;
   height: 130px;
 }
+
 .squirrel {
   position: absolute;
   background-position: center;
@@ -46,26 +48,22 @@ h1 {
   background-image: url("dogGameImages/squirrel.png");
   background-repeat: no-repeat;
 }
+
 section {
   height: 800px;
   width: 500px;
   position:relative;
-  /* background-color: red; */
   background-image: url("./dogGameImages/score.jpg");
-  /* background-repeat: no-repeat; */
 }
+
+/* ** Where the squirrels are mainly positioned ** */
 .gameboard {
   align-items: center;
   width: 800px;
   height: 800px;
-  /* background-image: url("./images/tiles.jpg"); */
-
 }
+
 h3 {
   font-family: 'Coming Soon', cursive;
   font-size: 40px;
 }
-
-/* .mouse.up {
-  background-image: url(./images/mouse-down.png);
-} */

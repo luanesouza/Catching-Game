@@ -3,9 +3,8 @@ body {
   background-image: url("./firstPage-images/main-background.png");
   background-repeat: no-repeat;
   flex-direction: column;
-  /* align-items: center; */
-
 }
+
 main {
   display: flex;
   flex-direction: column;
@@ -17,52 +16,11 @@ h1 {
   font-family: 'Major Mono Display', monospace;
   text-align: center;
 }
+
 .frontPagePic {
   width: 200px;
   height: auto;
   margin: 20px;
-}
-
-.dog-pic: hover .side-score {
-opacity: 1;
-}
-.side-nav {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-}
-
-.side-nav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
-
-.side-nav: hover {
-  color: #f1f1f1;
-}
-
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
-
-@media screen and (max-height: 450px) {
-  .side-nav {padding-top: 15px;}
-  /* .side-nav a {font-size: 18px;} */
 }
 
 p {
@@ -70,6 +28,7 @@ p {
   font-size: 20px;
   font-family: 'EB Garamond', serif;
 }
+
 button {
   background-color: #E63462;
   color: white;
