@@ -11,7 +11,7 @@ Who will be faster? You or the mice?
 
 You lose the game if you don't catch all the mice on time.
 
- ** MVP Checklist: **
+ **MVP Checklist:**
 - [x] Have the mice run around
 - [x] Set a timer
 - [x] Set a value to each mouse
