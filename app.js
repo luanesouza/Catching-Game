@@ -3,9 +3,11 @@ console.log('Listening');
 const body = document.querySelector('body');
 const mouseCheese = document.querySelector('.mouseCheese');
 const gameboard = document.querySelector('.gameboard');
-let scoreBoard = document.querySelector('h3');
+let scoreBoard = document.querySelector('.scoreBoard');
+let timerBoard = document.querySelector('.timerBoard');
 let winBoard = document.querySelector('h4');
 let score = 0;
+let timeLeft = 20;
 
 //************* Mice start at a not random position *************
 
@@ -34,7 +36,7 @@ const moveMouse = (mouse) => {
 
 
 //************* remove mouse when hovered over *************
-mouse.addEventListener('click', () => {
+mouse.addEventListener('mouseover', () => {
   mouse.classList.remove('mouse');
   let mouseClass = mouse.classList;
   for (i = 1; i > mouse.classList; i-- ) {
@@ -67,7 +69,7 @@ let mouseCheeseMove = setInterval(() => {
       moveMouseCheese(mouseCheese);
     }, 1000);
 
-mouseCheese.addEventListener('click', () => {
+mouseCheese.addEventListener('mouseover', () => {
     mouseCheese.classList.remove('mouseCheese');
     for (i = 1; i > mouseCheese.classList; i-- ) {
         score+=50;
@@ -76,17 +78,31 @@ mouseCheese.addEventListener('click', () => {
 });
 console.log(`You earned 10 points. Your score is ${score}`);
 
-//************* SCORE *************
-scoreBoard.innerHTML = `Your score is ${score}`;
- const checkScore = () => {
-   if (score === 90) {
-     winBoard.innerHTML = `You caught all the mice! You win!`
 
+ //************* TIMER *************
+let downloadTimer = setInterval(function(){
+   timerBoard.innerHTML = timeLeft + " seconds remaining";
+   timeLeft -= 1;
+   if (timeLeft > 1) {
+     checkScore();
+   } else if(timeLeft <= 0) {
+     checkScore();
    }
- }
+ }, 1000);
 
+ //************* SCORE *************
+ scoreBoard.innerHTML = `Your score is ${score}`;
+  const checkScore = () => {
+    if (score >= 40 || timeLeft < 1) {
+      console.log('Anything');
+      timerLeft = clearInterval(downloadTimer);
+      timerBoard.innerHTML = `You win!`;
 
-
+    } else if (score < 40 || timeLeft === 0) {
+         timerBoard.innerHTML = `Your time is up! You scored only ${score} points.`;
+      }
+  }
+checkScore();
 createMouse();
 // moveMouseCheese(mouseCheese);
 // moveMouse(mouse);
