@@ -22,7 +22,9 @@ h1 {
   margin: 20px;
 }
 .side-score {
-  
+width: 200px;
+height: auto;
+background-color: red;
 }
 p {
   align-items: flex-end;

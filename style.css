@@ -2,10 +2,14 @@ body {
   margin: 10px;
   cursor:;
   width: 100%;
-  background-image: url("https://img.freepik.com/free-photo/texture-background_1404-99.jpg?size=626&ext=jpg");
+  /* background-repeat: no-repeat; */
 }
 header {
   background-color: blue;
+  text-align: center;
+}
+.whole-board {
+  display: flex;
   text-align: center;
 }
 h1 {
@@ -34,6 +38,18 @@ h1 {
   background-size: contain;
   background-image: url("images/mouse-down.png");
   background-repeat: no-repeat;
+}
+section {
+  background: black;
+  height: 800px;
+  width: 500px;
+}
+.gameboard {
+  align-items: center;
+  width: 800px;
+  height: 800px;
+  background-image: url("./images/tiles.jpg");
+
 }
 
 /* .mouse.up {
