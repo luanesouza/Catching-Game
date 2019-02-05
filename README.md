@@ -21,3 +21,12 @@ You lose the game if you don't catch all the mice on time.
 User can choose between chasing after mice (by choosing the cat), or chasing after squirrels (by choosing the dog).
 
 ![gameboard](./firstPage/firstPage-images/firstPage.png)
+
+### Post MVP
+
+1. Find images for the dog part of the game
+2. Change variables so the semantic matched with dog game
+
+**CAT GAME VS DOG GAME**
+![catboard](./firstPage/firstPage-images/catBoard.png)
+![dogboard](./firstPage/firstPage-images/dogboard.png)
