@@ -8,13 +8,20 @@ header {
   background-color: blue;
   text-align: center;
 }
+/* *** div wrapped around the whole board *** */
 .whole-board {
   display: flex;
   text-align: center;
+  justify-content: center;
+  background-image: url("./images/tiles.jpg");
+
 }
 h1 {
   font-size: 50px;
-  font-family: cursive;
+  font-family:'Amatic SC', cursive;
+  padding: 10px;
+  margin: 0;
+  position: relative;
 
 }
 .mouseCheese {
@@ -40,16 +47,23 @@ h1 {
   background-repeat: no-repeat;
 }
 section {
-  background: black;
   height: 800px;
   width: 500px;
+  position:relative;
+  /* background-color: red; */
+  background-image: url("./images/score.jpg");
+  /* background-repeat: no-repeat; */
 }
 .gameboard {
   align-items: center;
   width: 800px;
   height: 800px;
-  background-image: url("./images/tiles.jpg");
+  /* background-image: url("./images/tiles.jpg"); */
 
+}
+h3 {
+  font-family: 'Coming Soon', cursive;
+  font-size: 40px;
 }
 
 /* .mouse.up {
