@@ -1,4 +1,4 @@
-console.log('Listening');
+
 // ************* Setting global variables *************
 const body = document.querySelector('body');
 const mouseCheese = document.querySelector('.mouseCheese');
@@ -42,7 +42,6 @@ mouse.addEventListener('mouseover', () => {
   for (i = 1; i > mouse.classList; i-- ) {
     score+=10;
     scoreBoard.innerHTML = `Your score is ${score}`
-    console.log(`You earned 10 points. Your score is ${score}`);
   }
 });
 
@@ -76,7 +75,6 @@ mouseCheese.addEventListener('mouseover', () => {
         scoreBoard.innerHTML = `Your score is ${score}`
     }
 });
-console.log(`You earned 10 points. Your score is ${score}`);
 
 
  //************* TIMER *************
@@ -92,10 +90,10 @@ let downloadTimer = setInterval(function(){
  }, 1000);
 
  //************* SCORE *************
+
  scoreBoard.innerHTML = `Your score is ${score}`;
   const checkScore = () => {
     if (score >= 40 && timeLeft > 1) {
-      console.log('Anything');
       timerLeft = clearInterval(downloadTimer);
       timerBoard.innerHTML = `You win!`;
 
@@ -105,5 +103,3 @@ let downloadTimer = setInterval(function(){
   }
 checkScore();
 createMouse();
-// moveMouseCheese(mouseCheese);
-// moveMouse(mouse);
