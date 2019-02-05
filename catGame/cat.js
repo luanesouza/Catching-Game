@@ -93,13 +93,30 @@ let downloadTimer = setInterval(function(){
 
  scoreBoard.innerHTML = `Your score is ${score}`;
   const checkScore = () => {
-    if (score >= 40 && timeLeft > 1) {
+    if (score === 90 && timeLeft > 1) {
       timerLeft = clearInterval(downloadTimer);
       timerBoard.innerHTML = `You win!`;
-
+      // secondLevel();
     } else if (score < 40 && timeLeft === 0) {
          timerBoard.innerHTML = `Your time is up! You scored ${score} points.`;
       }
   }
+//************* POST MVP SECOND LEVEL *************
+
+
+// const buttonSecondLevel = document.createElement('button');
+//   gameboard.appendChild(buttonSecondLevel);
+//   let secondLevel = () => {
+//     score = 90;
+//     time = 30;
+//     createMouse();
+//     createMice();
+//     moveMouse();
+//     moveMouseCheese();
+//     buttonSecondLevel.setAttribute('class', 'buttonSecondLevel');
+//
+//   }
+
+
 checkScore();
 createMouse();
