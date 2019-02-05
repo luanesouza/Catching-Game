@@ -11,7 +11,13 @@ Who will be faster? You or the mice?
 
 You lose the game if you don't catch all the mice on time.
 
-### Screenshot of the initial gameboard
+ ** MVP Checklist:**
+- [x] Have the mice run around
+- [x] Set a timer
+- [x] Set a value to each mouse
+- [x] Have an accumulator that updates as the user captures the mice
+
+### Screenshot of the initial gameboard post MVP
 User can choose between chasing after mice (by choosing the cat), or chasing after squirrels (by choosing the dog).
 
-![gameboard](./firstPage-images/firstPage.jpg)
+![gameboard](./firstPage-images/firstPage.png)
