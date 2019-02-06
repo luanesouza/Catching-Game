@@ -32,13 +32,20 @@ h1 {
 
 p {
   align-items: flex-end;
-  font-size: 30px;
+  font-size: 25px;
   font-family: 'EB Garamond', serif;
+  padding: 10px;
+  margin: 5px;
 }
 
 @media only screen and (max-width: 600px) {
+
   body {
     background-color: lightblue;
+  }
+  
+  main {
+    border-top: 30%;
   }
 
   .dog-pic {
@@ -54,6 +61,7 @@ p {
   p {
     font-size: 20px;
   }
+
   h1 {
     font-size: 300%;
   }

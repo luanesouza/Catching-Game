@@ -1,29 +1,32 @@
+html {
+  background-image: url("./catGameImages/tiles.jpg");
+}
+
 body {
   margin: 10px;
-  cursor:;
   width: 100%;
-  /* background-repeat: no-repeat; */
 }
+
 header {
   background-color: blue;
   text-align: center;
 }
+
 /* *** div wrapped around the whole board *** */
 .whole-board {
   display: flex;
   text-align: center;
   justify-content: center;
-  background-image: url("./catGameImages/tiles.jpg");
-
 }
+
 h1 {
   font-size: 50px;
-  font-family:'Amatic SC', cursive;
+  font-family:'Amatic SC', Arial;
   padding: 10px;
   margin: 0;
   position: relative;
-
 }
+
 .mouseCheese {
   position: absolute;
   background-image: url("catGameImages/cheeseMouse-down.png");
@@ -35,6 +38,7 @@ h1 {
   width: 130px;
   height: 130px;
 }
+
 .mouse{
   position: absolute;
   background-position: center;
@@ -46,26 +50,21 @@ h1 {
   background-image: url("catGameImages/mouse-down.png");
   background-repeat: no-repeat;
 }
+
 section {
   height: 800px;
   width: 500px;
   position:relative;
-  /* background-color: red; */
   background-image: url("./catGameImages/score.jpg");
-  /* background-repeat: no-repeat; */
 }
+
 .gameboard {
   align-items: center;
   width: 800px;
   height: 800px;
-  /* background-image: url("./images/tiles.jpg"); */
-
 }
+
 h3 {
-  font-family: 'Coming Soon', cursive;
+  font-family: 'Coming Soon', 'Arial';
   font-size: 40px;
 }
-
-/* .mouse.up {
-  background-image: url(./images/mouse-down.png);
-} */

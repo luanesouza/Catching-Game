@@ -5,7 +5,6 @@ const squirrelNut = document.querySelector('.squirrelNut');
 const gameboard = document.querySelector('.gameboard');
 let scoreBoard = document.querySelector('.scoreBoard');
 let timerBoard = document.querySelector('.timerBoard');
-let winBoard = document.querySelector('h4');
 let score = 0;
 let timeLeft = 20;
 

@@ -19,7 +19,7 @@ header {
 
 h1 {
   font-size: 50px;
-  font-family:'Amatic SC', cursive;
+  font-family:'Amatic SC', 'Arial';
   padding: 10px;
   margin: 0;
   position: relative;
@@ -64,6 +64,6 @@ section {
 }
 
 h3 {
-  font-family: 'Coming Soon', cursive;
+  font-family: 'Coming Soon', 'Arial';
   font-size: 40px;
 }

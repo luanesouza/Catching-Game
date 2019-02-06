@@ -5,9 +5,8 @@ const mouseCheese = document.querySelector('.mouseCheese');
 const gameboard = document.querySelector('.gameboard');
 let scoreBoard = document.querySelector('.scoreBoard');
 let timerBoard = document.querySelector('.timerBoard');
-let winBoard = document.querySelector('h4');
 let score = 0;
-let timeLeft = 20;
+let timeLeft = 10;
 
 //************* Mice start at a not random position *************
 
@@ -19,40 +18,59 @@ const createMice = () => {
 };
 
 //************* create one mouse *************
-const createMouse = () => {
+function createMouse() {
 
-let mouse = document.createElement('div');
-mouse.setAttribute('class', 'mouse');
-gameboard.appendChild(mouse);
-
-
-// ************* move that one mouse *************
-const moveMouse = (mouse) => {
-  let top = Math.random() * gameboard.offsetHeight;
-  let right = Math.random() * gameboard.offsetHeight;
-  mouse.style.top = `${top}px`;
-  mouse.style.left =`${right}px`;
-};
+  let mouse = document.createElement('div');
+  mouse.setAttribute('class', 'mouse');
+  gameboard.appendChild(mouse);
 
 
-//************* remove mouse when hovered over *************
-mouse.addEventListener('mouseover', () => {
-  mouse.classList.remove('mouse');
-  let mouseClass = mouse.classList;
-  for (i = 1; i > mouse.classList; i-- ) {
-    score+=10;
-    scoreBoard.innerHTML = `Your score is ${score}`
+
+  // ************* move that one mouse *************
+  const moveMouse = (mouse) => {
+    let top = Math.random() * gameboard.offsetHeight;
+    let right = Math.random() * gameboard.offsetHeight;
+    mouse.style.top = `${top}px`;
+    mouse.style.left =`${right}px`;
+  };
+
+
+  //************* remove mouse when clicked *************
+  mouse.addEventListener('mouseover', () => {
+    mouse.classList.remove('mouse');
+    let mouseClass = mouse.classList;
+    for (i = 1; i > mouse.classList; i-- ) {
+      score+=10;
+      scoreBoard.innerHTML = `Your score is ${score}`
+    }
+  });
+
+  let mouseMove = setInterval(() => {
+          moveMouse(mouse);
+        }, 980);
+
+//we define an anonymous arrow function and then assign it to the removeMice variable.
+//this functions selects all of the mice nodes and assigns them to variables.
+//we then remove the mice using the .forEach to loop through a nodeList.
+  const removeMice = () => {
+    let allMice = document.querySelectorAll('.mouse');
+    let allCheese = document.querySelector('.mouseCheese');
+    allCheese.remove();
+    allMice.forEach(mice => {
+      mice.remove();
+    });
   }
-});
-
-let mouseMove = setInterval(() => {
-        moveMouse(mouse);
-      }, 980);
+  //we return the removeMice variable to access it outside of the createMouse function's scope.
+  return removeMice;
 };
-//************* create more mice class *************
 
+//************* create more mice class *************
+//we need to assign the removeMice function definition that was returned from createMouse.
+//since it is inside of a for loop, the variable assignment will get reassigned multiple times.
+//Thats why we instantiate the variable before the loop.
+let removeMice;
 for (i = 0; i < 5; i++) {
-  createMouse();
+  removeMice = createMouse();
 }
 //************* move the mouse with the cheese(50 points) *************
 const moveMouseCheese = (mouseCheese) => {
@@ -88,7 +106,6 @@ let downloadTimer = setInterval(function(){
      checkScore();
    }
  }, 1000);
-
  //************* SCORE *************
 
  scoreBoard.innerHTML = `Your score is ${score}`;
@@ -96,27 +113,12 @@ let downloadTimer = setInterval(function(){
     if (score === 110 && timeLeft > 1) {
       timerLeft = clearInterval(downloadTimer);
       timerBoard.innerHTML = `You win!`;
-      // secondLevel();
+
     } else if (score < 110 && timeLeft === 0) {
          timerBoard.innerHTML = `Your time is up! You scored ${score} points.`;
+          removeMice();
       }
   }
-//************* POST MVP SECOND LEVEL *************
-
-
-// const buttonSecondLevel = document.createElement('button');
-//   gameboard.appendChild(buttonSecondLevel);
-//   let secondLevel = () => {
-//     score = 90;
-//     time = 30;
-//     createMouse();
-//     createMice();
-//     moveMouse();
-//     moveMouseCheese();
-//     buttonSecondLevel.setAttribute('class', 'buttonSecondLevel');
-//
-//   }
 
 
 checkScore();
-createMouse();
