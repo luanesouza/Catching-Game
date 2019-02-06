@@ -8,7 +8,6 @@ body {
 }
 
 header {
-  background-color: blue;
   text-align: center;
 }
 
@@ -20,11 +19,13 @@ header {
 }
 
 h1 {
-  font-size: 50px;
+  font-size: 80px;
   font-family:'Amatic SC', Arial;
   padding: 10px;
   margin: 0;
   position: relative;
+  background-image: url('catGameImages/title-background.png');
+  background-position: center;
 }
 
 .mouseCheese {
@@ -37,6 +38,7 @@ h1 {
   transition-timing-function: linear;
   width: 130px;
   height: 130px;
+  cursor: pointer;
 }
 
 .mouse{
@@ -56,8 +58,10 @@ section {
   width: 500px;
   position:relative;
   background-image: url("./catGameImages/score.jpg");
+  background-repeat: no-repeat;
 }
 
+/* ** Where the mice are mainly positioned ** */
 .gameboard {
   align-items: center;
   width: 800px;

@@ -6,7 +6,7 @@ const gameboard = document.querySelector('.gameboard');
 let scoreBoard = document.querySelector('.scoreBoard');
 let timerBoard = document.querySelector('.timerBoard');
 let score = 0;
-let timeLeft = 10;
+let timeLeft = 20;
 
 //************* Mice start at a not random position *************
 
@@ -36,7 +36,7 @@ function createMouse() {
 
 
   //************* remove mouse when clicked *************
-  mouse.addEventListener('mouseover', () => {
+  mouse.addEventListener('click', () => {
     mouse.classList.remove('mouse');
     let mouseClass = mouse.classList;
     for (i = 1; i > mouse.classList; i-- ) {
@@ -55,7 +55,9 @@ function createMouse() {
   const removeMice = () => {
     let allMice = document.querySelectorAll('.mouse');
     let allCheese = document.querySelector('.mouseCheese');
+    if (allCheese) {
     allCheese.remove();
+  }
     allMice.forEach(mice => {
       mice.remove();
     });
@@ -69,7 +71,7 @@ function createMouse() {
 //since it is inside of a for loop, the variable assignment will get reassigned multiple times.
 //Thats why we instantiate the variable before the loop.
 let removeMice;
-for (i = 0; i < 5; i++) {
+for (i = 0; i < 10; i++) {
   removeMice = createMouse();
 }
 //************* move the mouse with the cheese(50 points) *************
@@ -86,7 +88,7 @@ let mouseCheeseMove = setInterval(() => {
       moveMouseCheese(mouseCheese);
     }, 1000);
 
-mouseCheese.addEventListener('mouseover', () => {
+mouseCheese.addEventListener('click', () => {
     mouseCheese.classList.remove('mouseCheese');
     for (i = 1; i > mouseCheese.classList; i-- ) {
         score+=50;
@@ -110,11 +112,11 @@ let downloadTimer = setInterval(function(){
 
  scoreBoard.innerHTML = `Your score is ${score}`;
   const checkScore = () => {
-    if (score === 110 && timeLeft > 1) {
+    if (score === 150 && timeLeft > 1) {
       timerLeft = clearInterval(downloadTimer);
       timerBoard.innerHTML = `You win!`;
 
-    } else if (score < 110 && timeLeft === 0) {
+    } else if (score < 150 && timeLeft === 0) {
          timerBoard.innerHTML = `Your time is up! You scored ${score} points.`;
           removeMice();
       }

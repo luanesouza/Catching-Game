@@ -20,38 +20,53 @@ const createSquirrels = () => {
 //************* create one squirrel *************
 const createSquirrel = () => {
 
-let squirrel = document.createElement('div');
-squirrel.setAttribute('class', 'squirrel');
-gameboard.appendChild(squirrel);
+  let squirrel = document.createElement('div');
+  squirrel.setAttribute('class', 'squirrel');
+  gameboard.appendChild(squirrel);
 
 
-// ************* move that one squirrel *************
-const moveSquirrel = (squirrel) => {
-  let top = Math.random() * gameboard.offsetHeight;
-  let right = Math.random() * gameboard.offsetHeight;
-  squirrel.style.top = `${top}px`;
-  squirrel.style.left =`${right}px`;
-};
+  // ************* move that one squirrel *************
+  const moveSquirrel = (squirrel) => {
+    let top = Math.random() * gameboard.offsetHeight;
+    let right = Math.random() * gameboard.offsetHeight;
+    squirrel.style.top = `${top}px`;
+    squirrel.style.left =`${right}px`;
+  };
 
 
-//************* remove squirrel when hovered over *************
-squirrel.addEventListener('mouseover', () => {
-  squirrel.classList.remove('squirrel');
-  let squirrelClass = squirrel.classList;
-  for (i = 1; i > squirrel.classList; i-- ) {
-    score+=10;
-    scoreBoard.innerHTML = `Your score is ${score}`
-  }
-});
+  //************* remove squirrel when hovered over *************
+  squirrel.addEventListener('click', () => {
+    squirrel.classList.remove('squirrel');
+    let squirrelClass = squirrel.classList;
+    for (i = 1; i > squirrel.classList; i-- ) {
+      score+=10;
+      scoreBoard.innerHTML = `Your score is ${score}`
+    }
+  });
 
-let squirrelMove = setInterval(() => {
-        moveSquirrel(squirrel);
-      }, 980);
+  let squirrelMove = setInterval(() => {
+          moveSquirrel(squirrel);
+        }, 980);
+
+
+      const removeSquirrels = () => {
+        let allSquirrels = document.querySelectorAll('.squirrel');
+        let allNuts = document.querySelector('.squirrelNut');
+        if (squirrelNut) {
+        squirrelNut.remove();
+      }
+        allSquirrels.forEach(squirrel => {
+          squirrel.remove();
+        });
+      }
+        //we return the removeMice variable to access it outside of the createMouse function's scope.
+        return removeSquirrels;
 };
 //************* create more Squirrels class *************
-
+let removeSquirrels;
 for (i = 0; i < 5; i++) {
   createSquirrel();
+  removeSquirrels = createSquirrel();
 }
 //************* move the squirrel with the cheese(50 points) *************
 const moveSquirrelNut = (squirrelNut) => {
@@ -67,7 +82,7 @@ let squirrelNutMove = setInterval(() => {
       moveSquirrelNut(squirrelNut);
     }, 1000);
 
-squirrelNut.addEventListener('mouseover', () => {
+squirrelNut.addEventListener('click', () => {
     squirrelNut.classList.remove('squirrelNut');
     for (i = 1; i > squirrelNut.classList; i-- ) {
         score+=50;
@@ -92,30 +107,15 @@ let downloadTimer = setInterval(function(){
 
  scoreBoard.innerHTML = `Your score is ${score}`;
   const checkScore = () => {
-    if (score === 110 && timeLeft > 1) {
+    if (score === 150 && timeLeft > 1) {
       timerLeft = clearInterval(downloadTimer);
       timerBoard.innerHTML = `You win!`;
-      // secondLevel();
-    } else if (score < 110 && timeLeft === 0) {
+
+    } else if (score < 150 && timeLeft === 0) {
          timerBoard.innerHTML = `Your time is up! You scored ${score} points.`;
+         removeSquirrels();
       }
   }
-//************* POST MVP SECOND LEVEL *************
-
-
-// const buttonSecondLevel = document.createElement('button');
-//   gameboard.appendChild(buttonSecondLevel);
-//   let secondLevel = () => {
-//     score = 90;
-//     time = 30;
-//     createsquirrel();
-//     createSquirrels();
-//     moveSquirrel();
-//     moveSquirrelNut();
-//     buttonSecondLevel.setAttribute('class', 'buttonSecondLevel');
-//
-//   }
-
 
 checkScore();
 createSquirrel();
