@@ -1,18 +1,25 @@
-body {
-  display: flex;
+html {
   background-image: url("./firstPage-images/main-background.png");
-  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body, html{
+  display: flex;
+  /* background-repeat: no-repeat; */
   flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: auto;
 }
 
 main {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items:center;
 }
 
 h1 {
-  font-size: 100px;
+  font-size: 500%;
   font-family: 'Major Mono Display', monospace;
   text-align: center;
 }
@@ -25,18 +32,29 @@ h1 {
 
 p {
   align-items: flex-end;
-  font-size: 20px;
+  font-size: 30px;
   font-family: 'EB Garamond', serif;
 }
 
-button {
-  background-color: #E63462;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  border-radius: 10px;
-  font-size: 20px;
-  cursor: pointer;
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+
+  .dog-pic {
+    width: 150px;
+    height: auto;
+  }
+
+  .cat-pic {
+    width: 160px;
+    height: auto;
+  }
+
+  p {
+    font-size: 20px;
+  }
+  h1 {
+    font-size: 300%;
+  }
 }

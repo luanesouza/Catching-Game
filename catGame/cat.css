@@ -29,7 +29,7 @@ h1 {
   background-image: url("catGameImages/cheeseMouse-down.png");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: contain;
+  background-size:contain;
   transition: top 1s, left  1s;
   transition-timing-function: linear;
   width: 130px;
