@@ -30,3 +30,24 @@ User can choose between chasing after mice (by choosing the cat), or chasing aft
 **CAT GAME VS DOG GAME**
 ![catboard](./firstPage/firstPage-images/catBoard.png)
 ![dogboard](./firstPage/firstPage-images/dogboard.png)
+
+### Code Snippet
+To have the mice disappear once the time was over I defined an anonymous arrow function and then assign it to the removeMice variable.
+This functions selects all of the mice nodes and assigns them to variables.
+I then remove the mice using the .forEach to loop through a nodeList.
+
+`  const removeMice = () => {
+    let allMice = document.querySelectorAll('.mouse');
+    let allCheese = document.querySelector('.mouseCheese');
+    if (allCheese) {
+    allCheese.remove();
+  }
+    allMice.forEach(mice => {
+      mice.remove();
+    });
+  }
+  return removeMice;
+};`
+
+I return the removeMice variable to access it outside of the createMouse function's scope.
+The same idea was used in the dog.js 
