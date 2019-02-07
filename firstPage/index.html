@@ -8,20 +8,27 @@
     <title>Catching Game</title>
   </head>
   <body>
+    <header>
+      <h1> catching Game </h1>
+    </header>
+
     <main>
-      <header>
-        <h1> catching Game </h1>
-      </header>
-
-      <p> Click on the dog to chase squirrels </p>
+      <!-- <p> Click on the dog to chase squirrels </p> -->
       <a href="/Users/luanesouza/wdi/projectIdeas/dogGame/dog.html">
-      <img src="./firstPage-images/dog.png"class="frontPagePic dog-pic" alt="dog-pic">
+        <img src="./firstPage-images/dog.png"class="frontPagePic dog-pic" alt="dog-pic">
       </a>
-
-      <p> Click on the cat to chase mice </p>
+      <!-- <p> Click on the cat to chase mice </p> -->
       <a href="/Users/luanesouza/wdi/projectIdeas/catGame/cat.html">
-      <img src="./firstPage-images/cat.png"class="frontPagePic cat-pic" alt="cat-pic">
+        <img src="./firstPage-images/cat.png"class="frontPagePic cat-pic" alt="cat-pic">
       </a>
     </main>
+    <div class="buttons">
+      <button onclick="showTextDog()"> Click For Instructions </button>
+      <button onclick="showTextCat()"> Click For Instructions </button>
+    </div>
+    <section>
+      <div class="dogInstr"> </div>
+      <div class="catInstr"></div>
+    </section>
   </body>
 </html>
