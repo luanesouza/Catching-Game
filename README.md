@@ -29,7 +29,7 @@ User can choose between chasing after mice (by choosing the cat), or chasing aft
 
 **CAT GAME VS DOG GAME**
 ![catboard](./firstPage/firstPage-images/catBoard.png)
-![dogboard](./firstPage/firstPage-images/dogboard.png)
+![dogboard](./firstPage/firstPage-images/dogBoard.png)
 
 ### Code Snippet
 To have the mice disappear once the time was over I defined an anonymous arrow function and then assign it to the removeMice variable.
