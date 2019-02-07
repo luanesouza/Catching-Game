@@ -24,8 +24,6 @@ function createMouse() {
   mouse.setAttribute('class', 'mouse');
   gameboard.appendChild(mouse);
 
-
-
   // ************* move that one mouse *************
   const moveMouse = (mouse) => {
     let top = Math.random() * gameboard.offsetHeight;
@@ -33,8 +31,6 @@ function createMouse() {
     mouse.style.top = `${top}px`;
     mouse.style.left =`${right}px`;
   };
-
-
   //************* remove mouse when clicked *************
   mouse.addEventListener('click', () => {
     mouse.classList.remove('mouse');
@@ -112,15 +108,15 @@ let downloadTimer = setInterval(function(){
 
  scoreBoard.innerHTML = `Your score is ${score}`;
   const checkScore = () => {
-    if (score === 150 && timeLeft > 1) {
+    if (score === 160 && timeLeft > 1) {
       timerLeft = clearInterval(downloadTimer);
       timerBoard.innerHTML = `You win!`;
 
-    } else if (score < 150 && timeLeft === 0) {
+    } else if (score < 160 && timeLeft === 0) {
          timerBoard.innerHTML = `Your time is up! You scored ${score} points.`;
           removeMice();
       }
-  }
+};
 
 
 checkScore();
