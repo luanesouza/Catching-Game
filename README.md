@@ -36,9 +36,10 @@ To have the mice disappear once the time was over I defined an anonymous arrow f
 This functions selects all of the mice nodes and assigns them to variables.
 I then remove the mice using the .forEach to loop through a nodeList.
 
-`  const removeMice = () => {
+```  
+const removeMice = () => {
     let allMice = document.querySelectorAll('.mouse');
-    let allCheese = document.querySelector('.mouseCheese');
+    let allCheese = document.querySelecto('.mouseCheese');
     if (allCheese) {
     allCheese.remove();
   }
@@ -47,7 +48,8 @@ I then remove the mice using the .forEach to loop through a nodeList.
     });
   }
   return removeMice;
-};`
+};
+```
 
 I return the removeMice variable to access it outside of the createMouse function's scope.
 The same idea was used in the dog.js 

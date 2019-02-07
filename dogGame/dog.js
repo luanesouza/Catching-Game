@@ -9,7 +9,6 @@ let score = 0;
 let timeLeft = 20;
 
 //************* Squirrels start at a not random position *************
-
 const createSquirrels = () => {
   const notRandomPosition = (squirrelNut, squirrel) => {
     squirrelNut.style.left = -500 + 'px';
@@ -24,7 +23,6 @@ const createSquirrel = () => {
   squirrel.setAttribute('class', 'squirrel');
   gameboard.appendChild(squirrel);
 
-
   // ************* move that one squirrel *************
   const moveSquirrel = (squirrel) => {
     let top = Math.random() * gameboard.offsetHeight;
@@ -33,33 +31,30 @@ const createSquirrel = () => {
     squirrel.style.left =`${right}px`;
   };
 
+  //************* remove squirrel when clicked *************
+squirrel.addEventListener('click', () => {
+  squirrel.classList.remove('squirrel');
+  let squirrelClass = squirrel.classList;
+  for (i = 1; i > squirrel.classList; i-- ) {
+    score+=10;
+    scoreBoard.innerHTML = `Your score is ${score}`
+  }
+});
 
-  //************* remove squirrel when hovered over *************
-  squirrel.addEventListener('click', () => {
-    squirrel.classList.remove('squirrel');
-    let squirrelClass = squirrel.classList;
-    for (i = 1; i > squirrel.classList; i-- ) {
-      score+=10;
-      scoreBoard.innerHTML = `Your score is ${score}`
-    }
+let squirrelMove = setInterval(() => {
+      moveSquirrel(squirrel);
+    }, 980);
+
+const removeSquirrels = () => {
+  let allSquirrels = document.querySelectorAll('.squirrel');
+  let allNuts = document.querySelector('.squirrelNut');
+  if (squirrelNut) {
+  squirrelNut.remove();
+}
+  allSquirrels.forEach(squirrel => {
+    squirrel.remove();
   });
-
-  let squirrelMove = setInterval(() => {
-          moveSquirrel(squirrel);
-        }, 980);
-
-
-      const removeSquirrels = () => {
-        let allSquirrels = document.querySelectorAll('.squirrel');
-        let allNuts = document.querySelector('.squirrelNut');
-        if (squirrelNut) {
-        squirrelNut.remove();
-      }
-        allSquirrels.forEach(squirrel => {
-          squirrel.remove();
-        });
-      }
-        //we return the removeMice variable to access it outside of the createMouse function's scope.
+}
         return removeSquirrels;
 };
 //************* create more Squirrels class *************
@@ -83,13 +78,12 @@ let squirrelNutMove = setInterval(() => {
     }, 1000);
 
 squirrelNut.addEventListener('click', () => {
-    squirrelNut.classList.remove('squirrelNut');
-    for (i = 1; i > squirrelNut.classList; i-- ) {
-        score+=50;
-        scoreBoard.innerHTML = `Your score is ${score}`
+  squirrelNut.classList.remove('squirrelNut');
+  for (i = 1; i > squirrelNut.classList; i-- ) {
+      score+=50;
+      scoreBoard.innerHTML = `Your score is ${score}`
     }
 });
-
 
  //************* TIMER *************
 let downloadTimer = setInterval(function(){
@@ -105,7 +99,7 @@ let downloadTimer = setInterval(function(){
 
  //************* SCORE *************
 
- scoreBoard.innerHTML = `Your score is ${score}`;
+scoreBoard.innerHTML = `Your score is ${score}`;
   const checkScore = () => {
     if (score === 160 && timeLeft > 1) {
       timerLeft = clearInterval(downloadTimer);
@@ -115,7 +109,7 @@ let downloadTimer = setInterval(function(){
          timerBoard.innerHTML = `Your time is up! You scored ${score} points.`;
          removeSquirrels();
       }
-  }
+};
 
 checkScore();
 createSquirrel();

@@ -45,9 +45,6 @@ function createMouse() {
           moveMouse(mouse);
         }, 980);
 
-//we define an anonymous arrow function and then assign it to the removeMice variable.
-//this functions selects all of the mice nodes and assigns them to variables.
-//we then remove the mice using the .forEach to loop through a nodeList.
   const removeMice = () => {
     let allMice = document.querySelectorAll('.mouse');
     let allCheese = document.querySelector('.mouseCheese');
@@ -58,14 +55,11 @@ function createMouse() {
       mice.remove();
     });
   }
-  //we return the removeMice variable to access it outside of the createMouse function's scope.
   return removeMice;
 };
 
 //************* create more mice class *************
-//we need to assign the removeMice function definition that was returned from createMouse.
-//since it is inside of a for loop, the variable assignment will get reassigned multiple times.
-//Thats why we instantiate the variable before the loop.
+
 let removeMice;
 for (i = 0; i < 10; i++) {
   removeMice = createMouse();
