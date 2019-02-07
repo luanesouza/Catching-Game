@@ -3,9 +3,7 @@ html {
   background-size: cover;
 }
 
-body{
-  /* background-repeat: no-repeat; */
-  /* flex-direction: row; */
+body {
   align-items: center;
   height: 100%;
   width: auto;
@@ -24,7 +22,7 @@ main {
 
 h1 {
   font-size: 500%;
-  font-family: 'Major Mono Display', monospace;
+  font-family: 'Major Mono Display';
   text-align: center;
 }
 
@@ -34,10 +32,12 @@ h1 {
   justify-content: center;
   margin: 15px;
   padding: 10px;
+  text-align: center;
 }
 
 button {
   margin: 50px;
+  margin-left: 140px;
   background-color: #ff69b4;
   width: 150px;
   height: 55px;
@@ -65,11 +65,16 @@ p {
   font-family: 'EB Garamond', serif;
   padding: 10px;
   margin: 5px;
+  text-align: center;
+}
+
+a {
+text-align: center;
+text-decoration: none;
 }
 
 section {
   display: flex;
-  background-color: black;
   flex-direction: row;
   justify-content: center;
   margin: 15px;
@@ -79,7 +84,6 @@ section {
 .catInstr {
   width: 300px;
   height: 300px;
-  background-color: red;
   padding: 10px;
   margin: 10px;
   text-align: justify;
@@ -90,7 +94,6 @@ section {
 .dogInstr {
   width: 300px;
   height: 300px;
-  background-color: blue;
   padding: 10px;
   margin: 10px;
   text-align: justify;
