@@ -20,7 +20,7 @@ You lose the game if you don't catch all the mice on time.
 ### Screenshot of the initial gameboard post MVP
 User can choose between chasing after mice (by choosing the cat), or chasing after squirrels (by choosing the dog).
 
-![gameboard](./firstPage/firstPage-images/firstPage.png)
+![gameboard](./firstPage-images/firstPage.png)
 
 ### Post MVP
 
@@ -28,8 +28,8 @@ User can choose between chasing after mice (by choosing the cat), or chasing aft
 2. Change variables so the semantic matched with dog game
 
 **CAT GAME VS DOG GAME**
-![catboard](./firstPage/firstPage-images/catBoard.png)
-![dogBoard](./firstPage/firstPage-images/dogBoard.png)
+![catboard](./firstPage-images/catBoard.png)
+![dogBoard](./firstPage-images/dogBoard.png)
 
 ### Code Snippet
 To have the mice disappear once the time was over I defined an anonymous arrow function and then assign it to the removeMice variable.
@@ -39,7 +39,7 @@ I then remove the mice using the .forEach to loop through a nodeList.
 ```  
 const removeMice = () => {
     let allMice = document.querySelectorAll('.mouse');
-    let allCheese = document.querySelecto('.mouseCheese');
+    let allCheese = document.querySelector('.mouseCheese');
     if (allCheese) {
     allCheese.remove();
   }
