@@ -1,0 +1,127 @@
+html {
+  background-image: url("./firstPage-images/main-background.png");
+  background-size: cover;
+}
+
+body {
+  align-items: center;
+  height: 100%;
+  width: auto;
+}
+
+header {
+  flex-direction: column;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  align-items:flex-end;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 500%;
+  font-family: 'Major Mono Display';
+  text-align: center;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 15px;
+  padding: 10px;
+  text-align: center;
+}
+
+button {
+  margin: 50px;
+  margin-left: 140px;
+  background-color: #ff69b4;
+  width: 150px;
+  height: 55px;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+.frontPagePic {
+  height: auto;
+  margin: 20px;
+}
+
+.dog-pic {
+  width: 180px;
+  margin: 15px;
+}
+
+.cat-pic {
+  width: 210px;
+  margin: 15px;
+}
+
+p {
+  font-size: 25px;
+  font-family: 'EB Garamond', serif;
+  padding: 10px;
+  margin: 5px;
+  text-align: center;
+}
+
+a {
+text-align: center;
+text-decoration: none;
+}
+
+section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 15px;
+  padding: 10px;
+}
+
+.catInstr {
+  width: 300px;
+  height: 300px;
+  padding: 10px;
+  margin: 10px;
+  text-align: justify;
+  font-size: 25px;
+  font-family: inherit;
+}
+
+.dogInstr {
+  width: 300px;
+  height: 300px;
+  padding: 10px;
+  margin: 10px;
+  text-align: justify;
+  font-size: 25px;
+  font-family: inherit;
+}
+
+@media only screen and (max-width: 600px) {
+
+  main {
+    border-top: 30%;
+  }
+
+  .dog-pic {
+    width: 150px;
+    height: auto;
+  }
+
+  .cat-pic {
+    width: 160px;
+    height: auto;
+  }
+
+  p {
+    font-size: 20px;
+  }
+
+  h1 {
+    font-size: 300%;
+  }
+}
