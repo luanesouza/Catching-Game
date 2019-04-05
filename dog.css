@@ -1,0 +1,74 @@
+html {
+  background-image: url("./dogGameImages/tiles.jpg");
+}
+
+body {
+  margin: 10px;
+  width: 100%;
+}
+
+header {
+  text-align: center;
+}
+
+/* *** div wrapped around the whole board *** */
+.whole-board {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 80px;
+  font-family:'Amatic SC', 'Arial';
+  padding: 10px;
+  margin: 0;
+  position: relative;
+  background-image: url('dogGameImages/title-background.png');
+  background-position: center;
+}
+/* *** Squirrels with a nut is 50 points *** */
+.squirrelNut {
+  position: absolute;
+  background-image: url("dogGameImages/squirrel.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  transition: top 1s, left  1s;
+  transition-timing-function: linear;
+  width: 130px;
+  height: 130px;
+  cursor: pointer;
+}
+
+.squirrel {
+  position: absolute;
+  background-position: center;
+  transition: top 2s, left 1s;
+  transition-timing-function: linear;
+  width: 130px;
+  height: 130px;
+  background-size: contain;
+  background-image: url("dogGameImages/squirrel.png");
+  background-repeat: no-repeat;
+}
+
+section {
+  height: 800px;
+  width: 500px;
+  position:relative;
+  background-image: url("./dogGameImages/score.jpg");
+  background-repeat: no-repeat;
+}
+
+/* ** Where the squirrels are mainly positioned ** */
+.gameboard {
+  align-items: center;
+  width: 800px;
+  height: 800px;
+}
+
+h3 {
+  font-family: 'Coming Soon', 'Arial';
+  font-size: 40px;
+}
